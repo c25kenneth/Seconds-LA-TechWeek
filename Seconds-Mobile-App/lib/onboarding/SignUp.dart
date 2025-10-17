@@ -160,9 +160,9 @@ class _SignUpPageState extends State<SignUpPage> {
                           // TODO: Handle sign up logic here
                           dynamic signUpResult = await _googleAuthService.signInWithGoogleFirebase(widget.role, widget.organizationName);
 
-                          if (signUpResult.runtimeType != String && widget.role == "Supplier") {
+                          if (signUpResult.runtimeType != String && widget.role == "supplier") {
                             Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => SupplierHome()), (Route<dynamic> r) => false);
-                          } else if (signUpResult.runtimeType != String && widget.role == "Buyer") {
+                          } else if (signUpResult.runtimeType != String && widget.role == "consumer") {
                             Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => BuyerHome()), (Route<dynamic> r) => false);
                           }
                         }
@@ -230,9 +230,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   GoogleBtn1(onPressed: () async {
                     dynamic signUpResult = await _googleAuthService.signInWithGoogleFirebase(widget.role, widget.organizationName);
 
-                          if (signUpResult.runtimeType != String && widget.role == "Supplier") {
+                          if (signUpResult.runtimeType != String && widget.role == "supplier") {
                             Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => SupplierHome()), (Route<dynamic> r) => false);
-                          } else if (signUpResult.runtimeType != String && widget.role == "Buyer") {
+                          } else if (signUpResult.runtimeType != String && widget.role == "consumer") {
                             Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => BuyerHome()), (Route<dynamic> r) => false);
                           }
                   }),

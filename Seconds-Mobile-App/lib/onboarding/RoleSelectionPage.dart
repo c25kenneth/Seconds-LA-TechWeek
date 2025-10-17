@@ -20,134 +20,135 @@ class RoleSelectionPage extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
       ),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(24, 28, 24, 20),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // 🌿 Header
-            Icon(
-              Icons.eco_outlined,
-              color: const Color(0xFF2E7D32),
-              size: 40,
-            ),
-            const SizedBox(height: 12),
-
-            Text(
-              "Organization Name",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-                color: const Color(0xFF1B5E20),
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(24, 28, 24, 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.eco_outlined,
+                color: const Color(0xFF2E7D32),
+                size: 40,
               ),
-            ),
-
-            const SizedBox(height: 12),
-
-            Text(
-              "Please enter your organization name below to continue.",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
-                fontSize: 14.5,
-                color: Colors.grey[700],
-                height: 1.5,
+              const SizedBox(height: 12),
+        
+              Text(
+                "Organization Name",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                  color: const Color(0xFF1B5E20),
+                ),
               ),
-            ),
-
-            const SizedBox(height: 22),
-
-            TextField(
-              controller: orgController,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey[50],
-                hintText: "e.g., Green Valley Farm",
-                hintStyle: GoogleFonts.inter(
-                  color: Colors.grey[400],
+        
+              const SizedBox(height: 12),
+        
+              Text(
+                "Please enter your organization name below to continue.",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.inter(
+                  fontSize: 14.5,
+                  color: Colors.grey[700],
+                  height: 1.5,
                 ),
-                prefixIcon: const Icon(Icons.business_outlined, color: Colors.grey),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(14),
-                  borderSide: BorderSide(color: Colors.grey[300]!),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(14),
-                  borderSide: BorderSide(color: Colors.grey[300]!),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(14),
-                  borderSide: const BorderSide(
-                    color: Color(0xFF2E7D32),
-                    width: 2,
+              ),
+        
+              const SizedBox(height: 22),
+        
+              TextField(
+                controller: orgController,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.grey[50],
+                  hintText: "e.g., Green Valley Farm",
+                  hintStyle: GoogleFonts.inter(
+                    color: Colors.grey[400],
                   ),
-                ),
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 14,
-                ),
-              ),
-              style: GoogleFonts.inter(fontSize: 15.5),
-            ),
-
-            const SizedBox(height: 28),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(
-                  onPressed: () => Navigator.of(dialogContext).pop(),
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.grey[600],
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  prefixIcon: const Icon(Icons.business_outlined, color: Colors.grey),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: BorderSide(color: Colors.grey[300]!),
                   ),
-                  child: Text(
-                    "Cancel",
-                    style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey[600],
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: BorderSide(color: Colors.grey[300]!),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF2E7D32),
+                      width: 2,
                     ),
                   ),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 14,
+                  ),
                 ),
-                const SizedBox(width: 8),
-                ElevatedButton(
-                  onPressed: () {
-                    if (orgController.text.trim().isNotEmpty) {
-                      Navigator.of(dialogContext).pop();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignUpPage(
-                            role: role,
-                            organizationName: orgController.text.trim(),
+                style: GoogleFonts.inter(fontSize: 15.5),
+              ),
+        
+              const SizedBox(height: 28),
+        
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: () => Navigator.of(dialogContext).pop(),
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.grey[600],
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    ),
+                    child: Text(
+                      "Cancel",
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  ElevatedButton(
+                    onPressed: () {
+                      if (orgController.text.trim().isNotEmpty) {
+                        Navigator.of(dialogContext).pop();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignUpPage(
+                              role: role,
+                              organizationName: orgController.text.trim(),
+                            ),
                           ),
-                        ),
-                      );
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    backgroundColor: const Color(0xFF2E7D32),
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
+                        );
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      backgroundColor: const Color(0xFF2E7D32),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 26,
+                        vertical: 12,
+                      ),
                     ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 26,
-                      vertical: 12,
+                    child: Text(
+                      "Continue",
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
-                  child: Text(
-                    "Continue",
-                    style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -158,6 +159,7 @@ class RoleSelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xFFF5F7F3),
       body: SafeArea(
         child: Padding(
@@ -167,7 +169,7 @@ class RoleSelectionPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "Join Replate",
+                "Join Seconds",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   fontSize: 32,
@@ -193,7 +195,7 @@ class RoleSelectionPage extends StatelessWidget {
                 description: "List your surplus or imperfect food items to be picked up by buyers",
                 color: const Color(0xFF2E7D32),
                 onTap: () {
-                  _showOrganizationDialog(context, 'Supplier');
+                  _showOrganizationDialog(context, 'supplier');
                 },
               ),
               
@@ -201,11 +203,11 @@ class RoleSelectionPage extends StatelessWidget {
               
               buildRoleCard(
                 icon: Icons.shopping_bag,
-                title: "Buyer",
+                title: "Consumer",
                 description: "Browse available food listings and help reduce food waste",
                 color: const Color(0xFF43A047),
                 onTap: () {
-                  _showOrganizationDialog(context, 'Buyer');
+                  _showOrganizationDialog(context, 'consumer');
                 },
               ),
               

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:replate/Firebase/AuthFunctions.dart';
+import 'package:replate/home/consumer/BuyerHome.dart';
 import 'package:replate/home/supplier/SupplierHome.dart';
 import 'package:replate/onboarding/RoleSelectionPage.dart';
 import 'package:replate/widgets/SignInWithApple.dart';
@@ -233,9 +234,11 @@ class _SignInPageState extends State<SignInPage> {
                     dynamic signInResult = await _googleAuthService.signInWithGoogleFirebase("", "");
 
                     if (signInResult.runtimeType != String) {
-                      if (signInResult["role"] == "Supplier") {
+                      if (signInResult["role"] == "supplier") {
                         Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => SupplierHome()), (Route<dynamic> r) => false);
-                      } else if (signInResult["role"] == "Buyer") {
+                      } else if (signInResult["role"] == "consumer") {
+
+                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => BuyerHome()), (Route<dynamic> r) => false);
                       }
                     } else {
                       print(signInResult);
