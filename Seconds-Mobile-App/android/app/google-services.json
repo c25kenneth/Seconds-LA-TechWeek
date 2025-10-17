@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "250102339577",
+    "project_id": "seconds-a2506",
+    "storage_bucket": "seconds-a2506.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250102339577:android:30d8d98ee7eac6420f8f28",
+        "android_client_info": {
+          "package_name": "com.example.replate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250102339577-scf2rkjaml4b3p1vua6ej84kdedv5lk0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2dcxGhbt44HeZB1em-kVbIyNoLvOy9w0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250102339577-scf2rkjaml4b3p1vua6ej84kdedv5lk0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
