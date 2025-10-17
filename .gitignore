@@ -1,1 +1,10 @@
 /.DS_Store
+
+/seconds-computer-vision-model/Fruit And Vegetable Diseases Dataset
+/seconds-computer-vision-model/test
+/seconds-computer-vision-model/models
+/seconds-computer-vision-model/.vscode
+/seconds-computer-vision-model/.venv
+/seconds-computer-vision-model/__pycache__
+/seconds-computer-vision-model/train.py 
+/seconds-computer-vision-model/test_file
